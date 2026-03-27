@@ -1,6 +1,9 @@
 package lk.tech.seventeen.task.model;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 public class Train {
 
@@ -11,7 +14,8 @@ public class Train {
     }
 
     public List<Section> getSections() {
-        return sections;
+        this.sections = Optional.ofNullable(sections).orElse(Collections.emptyList());
+        return this.sections;
     }
 
     public void setSections(List<Section> sections) {

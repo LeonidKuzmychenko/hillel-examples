@@ -1,7 +1,9 @@
 package lk.tech.thirteen.executors;
 
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ForkJoinPool;
 
 public class Main {
 
@@ -24,6 +26,8 @@ public class Main {
 
         //середенє тяжкі операції CPU
         Executors.newWorkStealingPool();
+
+        ForkJoinPool.commonPool().execute(new FindMaxTask(List.of(1,2,3,4)));
 
         //
         Executors.newVirtualThreadPerTaskExecutor();
