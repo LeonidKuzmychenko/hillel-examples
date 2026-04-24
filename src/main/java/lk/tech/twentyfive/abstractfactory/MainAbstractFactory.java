@@ -7,6 +7,7 @@ import lk.tech.twentyfive.abstractfactory.report.WeekReport;
 public class MainAbstractFactory {
     private static final ReportFactory FACTORY = new WinterFactory();
 
+
     public static void main(String[] args) {
         DayReport everyDayReport = FACTORY.createEveryDayReport();
         WeekReport everyWeekReport = FACTORY.createEveryWeekReport();
