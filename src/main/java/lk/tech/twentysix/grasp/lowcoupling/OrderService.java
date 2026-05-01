@@ -12,42 +12,21 @@ import java.sql.PreparedStatement;
  */
 public class OrderService {
 
-    private EmailService emailService = new EmailService();
-    private SmsService smsService = new SmsService();
-    private PdfGenerator pdfGenerator = new PdfGenerator();
-    private DiscountCalculator discountCalculator = new DiscountCalculator();
-    private LoggerService loggerService = new LoggerService();
-
-    public void createOrder(String customerEmail, String phone, double amount) {
-        try {
-            Connection connection = DriverManager.getConnection(
-                "jdbc:postgresql://localhost:5432/shop",
-                "user",
-                "password"
-            );
-
-            PreparedStatement statement = connection.prepareStatement(
-                "INSERT INTO orders(amount) VALUES (?)"
-            );
-
-            statement.setDouble(1, amount);
-            statement.executeUpdate();
-
-            double finalAmount = discountCalculator.applyDiscount(amount);
-
-            pdfGenerator.generateInvoice(finalAmount);
-
-            emailService.send(customerEmail);
-
-            smsService.send(phone);
-
-            loggerService.log("Замовлення створено");
-
-            statement.close();
-            connection.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+//    private EmailService emailService;
+//    private SmsService smsService ;
+//    private PdfGenerator pdfGenerator;
+//    private DiscountCalculator discountCalculator;
+//    private LoggerService loggerService;
+//
+//    public OrderService(EmailService emailService,
+//                        SmsService smsService,
+//                        PdfGenerator pdfGenerator,
+//                        DiscountCalculator discountCalculator,
+//                        LoggerService loggerService) {
+//        this.emailService = emailService;
+//        this.smsService = smsService;
+//        this.pdfGenerator = pdfGenerator;
+//        this.discountCalculator = discountCalculator;
+//        this.loggerService = loggerService;
+//    }
 }

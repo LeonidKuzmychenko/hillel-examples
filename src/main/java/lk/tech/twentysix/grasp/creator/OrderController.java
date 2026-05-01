@@ -7,10 +7,15 @@ package lk.tech.twentysix.grasp.creator;
  */
 public class OrderController {
 
+    private final OrderProvider orderProvider;
+
+    public OrderController(OrderProvider orderProvider) {
+        this.orderProvider = orderProvider;
+    }
+
     public void createOrder() {
         // Контролер сам створює Order без потреби
-        Order order = new Order("Іван");
-
+        Order order = orderProvider.provideOrder("Іван");
         System.out.println("Замовлення створено для: " + order.getCustomerName());
     }
 }

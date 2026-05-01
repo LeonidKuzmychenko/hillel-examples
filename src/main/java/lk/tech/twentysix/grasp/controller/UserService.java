@@ -1,4 +1,4 @@
-package lk.tech.twentysix.solid.s;
+package lk.tech.twentysix.grasp.controller;
 
 import lombok.RequiredArgsConstructor;
 

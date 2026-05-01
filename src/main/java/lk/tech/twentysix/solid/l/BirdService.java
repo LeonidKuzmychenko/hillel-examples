@@ -2,7 +2,7 @@ package lk.tech.twentysix.solid.l;
 
 public class BirdService {
 
-    public void makeBirdFly(Bird bird) {
+    public void makeBirdFly(FlyingBird bird) {
         bird.fly();
     }
 }

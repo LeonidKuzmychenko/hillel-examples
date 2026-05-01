@@ -7,7 +7,11 @@ package lk.tech.twentysix.solid.d;
  */
 public class UserService {
 
-    private final MySqlUserRepository repository = new MySqlUserRepository();
+    private final UserRepository repository;
+
+    public UserService(UserRepository repository) {
+        this.repository = repository;
+    }
 
     public void register(String email) {
         repository.save(email);

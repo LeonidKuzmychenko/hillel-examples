@@ -1,5 +1,8 @@
 package lk.tech.twentysix.grasp.indirection;
 
+import lk.tech.twentysix.solid.d.UserRepository;
+import lk.tech.twentysix.solid.d.UserService;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -32,7 +35,6 @@ public class UserController {
             connection.close();
 
             System.out.println("Користувача створено");
-
         } catch (Exception e) {
             e.printStackTrace();
         }

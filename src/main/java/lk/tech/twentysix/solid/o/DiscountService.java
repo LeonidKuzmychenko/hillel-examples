@@ -7,14 +7,7 @@ package lk.tech.twentysix.solid.o;
  */
 public class DiscountService {
 
-    public double calculateDiscount(String customerType, double amount) {
-        if (customerType.equals("REGULAR")) {
-            return amount * 0.05;
-        } else if (customerType.equals("VIP")) {
-            return amount * 0.10;
-        } else if (customerType.equals("PREMIUM")) {
-            return amount * 0.15;
-        }
-        return 0;
+    public double calculateDiscount(DiscountCalculator discountCalculator, double amount) {
+        return discountCalculator.calculate(amount);
     }
 }

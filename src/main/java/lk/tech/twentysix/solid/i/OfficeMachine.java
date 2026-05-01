@@ -5,13 +5,6 @@ package lk.tech.twentysix.solid.i;
  * Краще кілька вузьких інтерфейсів, ніж один великий
  * Рішення: Розбити інтерфейс на менші
  */
-public interface OfficeMachine {
+public interface OfficeMachine extends PrintMachine, ScanMachine, FaxMachine, CopyMachine{
 
-    void print(Document doc);
-
-    void scan(Document doc);
-
-    void fax(Document doc);
-
-    void copy(Document doc);
 }

@@ -9,7 +9,7 @@ package lk.tech.twentysix.solid.l;
 public class MainLiskov {
 
     public static void main(String[] args) {
-        Bird bird = new Penguin();
+        FlyingBird bird = new FlyingBird();
         new BirdService().makeBirdFly(bird);
     }
 }
